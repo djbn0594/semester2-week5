@@ -20,8 +20,34 @@ int main(void){
 
 	for (int i = 0; i < strlen(hex); i++) {
 		if (isxdigit(hex[i])) {
-			if hex[i] > 
+			switch (hex[i]) {
+				case 'A':
+				case 'a':
+					decimal = decimal + 10;
+				case 'B':
+				case 'b':
+					decimal = decimal + 11;
+				case 'C':
+				case 'c':
+					decimal = decimal + 12;
+				case 'D':
+				case 'd':
+					decimal = decimal + 13;
+				case 'E':
+				case 'e':
+					decimal = decimal + 14;
+				case 'F':
+				case 'f':
+					decimal = decimal + 15;
+				if (isdigit(hex[i])) {
+					decimal = decimal + hex[i];
+				}
+			}
+		} 
+		else {
+			printf("Error: Invalid Hexadecimal\n");
 		}
+
 	}
 	// if input contains invalid hex digit
 	// printf("Error: Invalid Hexadecimal\n");
