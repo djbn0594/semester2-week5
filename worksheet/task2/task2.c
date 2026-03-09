@@ -18,32 +18,37 @@ int main(void){
 
 	scanf("%s", hex);
 
-	for (int i = 0; i < strlen(hex); i++) {
+	for (int i = 0; i < strlen(hex); i++){
+		
 		if (isxdigit(hex[i])) {
-			switch (hex[i]) {
-				case 'A':
-				case 'a':
-					decimal = decimal + 10;
-				case 'B':
-				case 'b':
-					decimal = decimal + 11;
-				case 'C':
-				case 'c':
-					decimal = decimal + 12;
-				case 'D':
-				case 'd':
-					decimal = decimal + 13;
-				case 'E':
-				case 'e':
-					decimal = decimal + 14;
-				case 'F':
-				case 'f':
-					decimal = decimal + 15;
-				if (isdigit(hex[i])) {
-					decimal = decimal + hex[i];
-				}
+			decimal *= 16;
+
+			if (isdigit(hex[i])) {
+				decimal += hex[i] - '0';
+			}
+
+			switch (toupper(hex[i])) {
+				case 'A': 
+				decimal += 10; 
+				break;
+                case 'B': 
+				decimal += 11; 
+				break;
+                case 'C': 
+				decimal += 12; 
+				break;
+                case 'D': 
+				decimal += 13; 
+				break;
+                case 'E': 
+				decimal += 14; 
+				break;
+                case 'F': 
+				decimal += 15; 
+				break;
 			}
 		} 
+		
 		else {
 			printf("Error: Invalid Hexadecimal\n");
 		}
