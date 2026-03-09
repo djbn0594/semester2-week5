@@ -31,24 +31,28 @@ int main(void){
 				case 'A': 
 				decimal += 10; 
 				break;
+
                 case 'B': 
 				decimal += 11; 
 				break;
+
                 case 'C': 
 				decimal += 12; 
 				break;
                 case 'D': 
 				decimal += 13; 
 				break;
+
                 case 'E': 
 				decimal += 14; 
 				break;
+				
                 case 'F': 
 				decimal += 15; 
 				break;
 			}
 		} 
-		
+
 		else {
 			printf("Error: Invalid Hexadecimal\n");
 		}
